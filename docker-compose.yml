@@ -1,0 +1,19 @@
+version: '3'
+# docker compose for exported container images
+services:
+  front:
+    build: ./front
+    working_dir: /app/
+    command: ["npm", "start"]
+    ports:
+      - "3000:3000"
+    network_mode: bridge
+
+  back:
+    build: ./back
+    command: python /app/manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    network_mode: bridge 
+
+  
