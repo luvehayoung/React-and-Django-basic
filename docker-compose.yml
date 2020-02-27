@@ -7,6 +7,10 @@ services:
     command: ["npm", "start"]
     ports:
       - "3000:3000"
+    # environment: 
+      # - NODE_ENV = development 
+      # - CHOKIDAR_USEPOLLING=true
+ 
     network_mode: bridge
 
   back:

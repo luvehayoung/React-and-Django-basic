@@ -1,8 +1,10 @@
 // App.js
 import React, { Component } from 'react';
 import axios from "axios";
+import Counter from "./Counter.js";
 
-const API_BASE =  'http://localhost:8000';
+require("dotenv").config()
+const API_BASE = process.env.REACT_APP_API_BASE; 
 
 class App extends Component {
   constructor() {
@@ -34,14 +36,14 @@ class App extends Component {
   }
 
   render() {
-    return (
-      
-      <div>
-        hello
+    return (    
+      <React.Fragment>
+        hello, hi
         {this.state.data.map(item => (
           <div key={item.data}>{item.data}</div>
         ))}
-      </div>
+        <Counter></Counter>
+      </React.Fragment>
     );
   }
 }
