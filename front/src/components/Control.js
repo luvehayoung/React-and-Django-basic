@@ -7,9 +7,9 @@ const createWarning = (func_name) => {
 
 class Control extends Component {
     
-    constructor(props){
-        super(props);
-    }
+    // constructor(props){
+    //     super(props);
+    // }
 
     static defaultProps = {
         onPlus: createWarning("On Plus"),

@@ -5,5 +5,5 @@ from . import views
 
 urlpatterns = [
     path('', views.Index.as_view()),
-    # path('<int:pk>/', views.DetailTodo.as_view()),
+    path('save', views.Index.as_view()),
 ]

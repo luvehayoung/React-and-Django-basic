@@ -6,7 +6,10 @@ import * as actions from '../actions';
 // smart component
 
 class Counter extends Component {
-    state = {  }
+    state = { 
+        
+
+    }
 
     setRandomColor = () => {
         console.log("h");

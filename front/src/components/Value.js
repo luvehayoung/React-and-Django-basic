@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // dumb component
 class Value extends Component {
-    constructor(props){
-        super(props);
-    };
+    // constructor(props){
+    //     super(props);
+    // };
 
     static defaultProps = {
         number: -1

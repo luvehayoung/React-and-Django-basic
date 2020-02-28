@@ -1,0 +1,19 @@
+header{
+    width: 100%;
+    height: 60px;
+    background-color: grey;
+    display: flex;
+}
+
+.current_value{
+    width: 60%;
+}
+
+.contorller{
+    width: 40%;
+}
+
+.controller button{
+    margin-right: 110px;
+    width: 80px;
+}
