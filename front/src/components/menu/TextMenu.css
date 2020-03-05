@@ -1,0 +1,26 @@
+.menu .textMenu{
+    width: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.menu .textMenu label{
+    width: 150px;
+    height: 40px;
+    display: block;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.menu .textMenu input{
+    width: 150px;
+    height: 35px;
+    outline: none !important;
+    /* border: none !important; */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}

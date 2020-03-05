@@ -4,7 +4,7 @@ from django.db import models
 class Basic(models.Model):
     
     data = models.CharField(max_length=200)
-    value = models.IntegerField(default = 0)
+    value = models.CharField(max_length=10, blank=True, null=True)
     value1 = models.CharField(max_length=10, blank=True, null=True)
     value2 = models.CharField(max_length=10, blank=True, null=True)
     value3 = models.CharField(max_length=10, blank=True, null=True)

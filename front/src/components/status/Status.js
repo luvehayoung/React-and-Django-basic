@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoadBtn from "./LoadBtn";
 import SaveBtn from "./SaveBtn";
+import ConfiBtn from "./ConfiBtn";
 import "./Status.css";
 import {connect, bindActionCreators} from 'react-redux';
 import * as actions from '../../actions';
@@ -12,9 +13,15 @@ class Status extends Component {
         return ( 
             <header>
                 <div className = "current_value"> 
-                    {data.id}
-                    {data.data}
-                    {data.value}
+                    <p className="pages">{(this.props.dataListIndex + 1) + "/" + this.props.dataList.length}</p>
+                    
+                    {        
+                        data.data !== 0 ? 
+                        <p className="title">{data.data.split('/')[data.data.split('/').length-1]}</p>
+                        :
+                        <p className="title"></p>
+                    }
+                    
                 </div>
 
                 <div className = "controller">
@@ -27,6 +34,11 @@ class Status extends Component {
                         data = {data} 
                         ImgIncrease = {this.props.handleImgHandle}>
                     </SaveBtn>
+                    <ConfiBtn
+                        API_BASE={this.props.API_BASE}
+                        ConfiSet = {this.props.handleConfiguration}
+                        ConfiInfo = {this.props.configuration} 
+                    ></ConfiBtn>
                 </div>
             </header>
         );
@@ -36,7 +48,8 @@ class Status extends Component {
 const mapStateToProps = (state) => {
     return {
         dataList: state.status.dataList,
-        dataListIndex: state.status.dataListIndex
+        dataListIndex: state.status.dataListIndex, 
+        configuration: state.status.configuration,
     }
 }
 
@@ -45,6 +58,9 @@ const mapDispatchToProps = (dispatch) => {
         handleImgLoad: (dataList, dataListIndex) => {
             dispatch(actions.img_load(dataList, dataListIndex))
         }, 
+        handleConfiguration: (configuration) => {
+            dispatch(actions.configuration(configuration))
+        },
     }
 }
 

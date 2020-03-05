@@ -1,0 +1,36 @@
+.menu{
+    width:40vw;
+    /* background-color: green; */
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.PaletteMenu{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.radioMenu{
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+.menuTitle{
+
+    width: 150px;
+    height: 40px;
+    display: block;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.PaletteMenu ul{
+    width:150px;
+    padding: 0;
+}
+

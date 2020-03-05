@@ -29,6 +29,14 @@ export function img_load(dataList, dataListIndex){
     }
 }
 
+// configuration
+export function configuration(configuration){
+    return {
+        type: types.CONFIGURATION,
+        configuration
+    }
+}
+
 // img board
 export function img_next(index){
     return {
@@ -44,10 +52,19 @@ export function img_prev(index){
     }
 }
 
-// menu
-export function img_handle(){
+
+export function grid_size(size){
     return {
-        type: types.IMG_HANDLE,
+        type: types.GRID_SIZE,
+        size
+    }
+}
+
+// menu
+export function input_value(value){
+    return {
+        type: types.INPUT_VALUE,
+        value
     }
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./Controller.css";
 
 class Controller extends Component {
 
@@ -7,7 +8,9 @@ class Controller extends Component {
         this.componentDidMount = this.componentDidMount.bind(this);
     }
 
-    state = {  }
+    state = { 
+        GridSize: 128
+     }
 
     componentDidMount() {
         document.addEventListener("keydown", this.key_imgController);
@@ -40,13 +43,22 @@ class Controller extends Component {
         }
     }
 
+    handleGrid = (e) =>{
+        this.setState({
+            GridSize: e
+        })
+    }
     render() {                
         return ( 
-            <div>
-                <button onClick = {() => this.imgController(-10)}>-10</button>
-                <button onClick = {() => this.imgController(-1)}>-1</button>
-                <button onClick = {() => this.imgController(1)}>1</button>
-                <button onClick = {() => this.imgController(10)}>10</button>
+            <div className="boardController">
+                <button onClick = {() => this.imgController(-10)}>&lt;&lt;</button>
+                <button onClick = {() => this.imgController(-1)}>&lt;</button>
+                <button onClick = {() => this.imgController(1)}>&gt;</button>
+                <button onClick = {() => this.imgController(10)}>&gt;&gt;</button>
+                <div>
+                    <input type="text" value={this.state.GridSize} onChange = {(e) => this.handleGrid(e.target.value)}></input>
+                    <button onClick={() => this.props.GridSize(this.state.GridSize)}>Grid</button>
+                </div>
             </div>
         );
     }

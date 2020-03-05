@@ -1,7 +1,11 @@
 .img_view{
-    width: 700px;
-    height: 400px;
+    width: 55vw;
+    height: 80vh;
     border: 1px black solid;
     border-radius: 1rem;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

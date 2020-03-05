@@ -7,22 +7,43 @@ const initialState = {
     //     data: 0,
     //     value: 0,
     // },
+    configuration:
+    {
+        loaded: false,
+        value: "",
+        value1: "",
+        value2: "",
+        value3: "",
+        value_val: [],
+        value1_val: [],
+        value2_val: [],
+        value3_val: [],
+        // id: 0, // pk
+        // image_name: 0, // image name
+        // radio_type: 0,  //radio type
+        // text_type: 0,   // text type
+        // palette_type: 0,    //palette type
+    },
+
+    // value1_val: ["type1", "type2", "type3"],
+    // value3_val: ["type1", "type2", "type3", "type4"], 
+
     dataList: [
         {
             id: 0,
             data: 0,
-            value: 0,
+            value: "",
             value1: "", 
             value2: "",
             value3: "",
         }
     ],
+
     dataListIndex: 0,
     // radio
-    value1_val: ["type1", "type2", "type3"],
-    // text
-    // click
-    value3_val: ["type1", "type2", "type3", "type4"], 
+   
+
+    gridSize:128,
 }
 
 export default function status(state = initialState, action){
@@ -34,12 +55,12 @@ export default function status(state = initialState, action){
                 dataList: action.dataList,
                 dataListIndex: action.dataListIndex
             };
-        case types.IMG_HANDLE:
+        case types.INPUT_VALUE:
             return {
                 ...state,
                 // data: { ...state.data, value: state.data.value + 1}
                 dataList: state.dataList.map((data, index) => 
-                    index === state.dataListIndex ? { ...data, value: data.value + 1} : data    
+                    index === state.dataListIndex ? { ...data, value: action.value} : data    
                 )
             };  
         case types.INPUT_VALUE1:
@@ -75,6 +96,16 @@ export default function status(state = initialState, action){
             return {
                 ...state,
                 dataListIndex: state.dataListIndex - action.index
+            }
+        case types.GRID_SIZE:
+            return {
+                ...state,
+                gridSize: action.size
+            }
+        case types.CONFIGURATION:
+            return {
+                ...state,
+                configuration: action.configuration
             }
         default:
             return state;

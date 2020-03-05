@@ -7,10 +7,14 @@ class LoadBtn extends Component {
         super(props);
         this.imgload = this.imgload.bind(this);
     }
-    state = {  }
+    state = { 
+        size: 10
+     }
 
     async imgload() {
-        let url = this.props.API_BASE;
+        // -1: load list
+        let size = this.state.size;
+        let url = this.props.API_BASE + "/api/-1/" + size;
         axios
         .get(url, {
             headers: {
@@ -18,17 +22,27 @@ class LoadBtn extends Component {
             }
         })
         .then(res => {
-           console.log(res.data); 
+        //    console.log(res.data); 
            this.props.ImgLoad(res.data, 0);
         })
         .catch(err => console.log(err));
 
     }
+
+    getLoadSize = (value) =>{
+        this.setState({
+            size: value
+        })
+    }
+
     render() { 
-        return ( 
-            <button onClick={this.imgload}>
-                Load
-            </button>
+        return (
+            <div>
+                <input onChange = {e => this.getLoadSize(e.target.value)} value = {this.state.size}></input> 
+                <button onClick={this.imgload}>
+                    Load
+                </button>
+            </div>
          );
     }
 }
