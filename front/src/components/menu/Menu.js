@@ -28,8 +28,8 @@ class Menu extends Component {
             }
         })
         .then(res => {
-            console.log("each", res.data.value);
-            console.log("ee", res.data.value1);
+            // console.log("each", res.data.value);
+            // console.log("ee", res.data.value1);
             this.props.handleInputValue(res.data.value);
             this.props.handleInputValue1(res.data.value1);
             this.props.handleInputValue2(res.data.value2);
