@@ -1,6 +1,3 @@
-# django admin 
-admin, 1234
-
 # django-react tutorial
 https://medium.com/@gazzaazhari/django-backend-react-frontend-basic-tutorial-6249af7964e4
 
